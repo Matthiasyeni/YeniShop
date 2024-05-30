@@ -1,0 +1,130 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg fixed-top yma bg-secondary">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}"><img class='image' src="{% static 'logo/logo.PNG' %}" height='90px'; width='90px' alt="..."></a>
+      <!-- <a class="navbar-brand text-white" href="#"><p class='yeni'><span>Y</span>eni_<span>S</span>hop</p></a> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="search-bar mt-3">
+        <form action="{% url 'searchproduct' %}" method="POST">
+          {% csrf_token %}  
+          <div class="input-group mb-3">
+              <input type="search" required class="form-control" name="productsearch" id="searchproduct" placeholder="search products">
+              <button type="submit" class="input-group-text"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>          
+
+      <div class="collapse navbar-collapse navb" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'home' %} active {% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'collections' %} active {% endif %}" aria-current="page" href="{% url 'collections' %}">Collections</a>
+          </li>
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'cart' %} active {% endif %}" aria-current="page" href="{% url 'cart' %}">Cart</a>
+          </li>
+           <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'wishlist' %} active {% endif %}" aria-current="page" href="{% url 'wishlist' %}">Wishlist</a>
+          </li>
+           <!-- <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'contact' %} active {% endif %}" aria-current="page" href="#">Contact</a>
+          </li> -->
+          {% if request.user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a style="font-weight: bold;" class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ request.user }}
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li> -->
+                <li><hr class="dropdown-divider"></li>
+                <li><a style="font-weight: bold;" class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+              </ul>
+            </li>
+
+          {% else %}
+            <li class="nav-item">
+              <a style="font-weight: bold;" class="nav-link text-white" href="{% url 'loginpage' %}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a style="font-weight: bold;" class="nav-link text-white" href="{% url 'register' %}">Register</a>
+            </li>
+          {% endif %}
+
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <style>
+.sticky{
+  background: #fff; 
+  padding: 10px 100px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.987);
+}
+.sticky .logo{
+  color: #111; 
+}
+.sticky .navigation li a{
+  color: #111; 
+}
+.yma{
+  background-color: #398583;
+}
+      .image{
+        position: relative;
+        border-radius: 100%;
+        left: 10px;
+      }
+      .navbar-brand span{
+        color: #ff01567e;
+        font-weight: 700;
+        font-size: 2em;
+        text-decoration: none;
+    }
+    .navb li a:hover{
+    letter-spacing: 3px;
+    transition: 0.5s;
+    color: brown;
+  } 
+    .yeni{
+      position: relative;
+      top: 28px;
+      letter-spacing: 2px;
+  }
+  .search-bar{
+    width: 30% !important;
+    position: relative;
+    left: 110px;
+}
+  
+    </style>
+
+  <script>
+    window.onscroll = function(){
+      var navbar = document.getElementById("navbar");
+      if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+        navbar.style.backgroundColor = "gray";
+        navbar.style.color = "white";
+      }
+      else{
+        navbar.style.backgroundColor = "transparent";
+        navbar.style.color = "black"
+      }
+    };
+  </script>
+ 
+  </nav>
+
+  
+  <br><br><br><br><br>
+
+
+
+  

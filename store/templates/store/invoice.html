@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+</head>
+<body>
+    <h1>Facture</h1>
+    <p>Nom : {{ fname }} {{ lname }}</p>
+    <p>E-mail : {{ email }}</p>
+    <p>Téléphone : {{ phone }}</p>
+    <p>Adresse : {{ address }}, {{ city }}, {{ country }}</p>
+    <h2>Résumé de la commande</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Produit</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cartitems %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product_qty }}</td>
+                <td>{{ item.product.formatted_selling_price | intcomma }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Total : Fcfa {{ total_price | intcomma }}</h3>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        /* Ajoutez vos styles CSS personnalisés ici */
+    </style>
+</head>
+<body>
+    <h1>Invoice</h1>
+    <h2>Customer Details:</h2>
+    <p><strong>First Name:</strong> {{ first_name }}</p>
+    <p><strong>Last Name:</strong> {{ last_name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Phone:</strong> {{ phone }}</p>
+    <p><strong>Address:</strong> {{ address }}</p>
+    <p><strong>City:</strong> {{ city }}</p>
+    <p><strong>Country:</strong> {{ country }}</p>
+
+    <h2>Order Summary:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cartitems %}
+            <tr>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product_qty }}</td>
+                <td>{{ item.product.formatted_selling_price }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Total Price: Fcfa {{ total_price }}</h2>
+
+    <!-- Ajoutez d'autres détails de la facture ou des options de paiement ici si nécessaire -->
+
+    <p>Thank you for your order!</p>
+</body>
+</html>

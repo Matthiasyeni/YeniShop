@@ -1,0 +1,9 @@
+.checkoutform label{
+    font-size: 14px !important;
+    font-weight: 600;
+}
+.search-bar{
+    width: 30px !important;
+    position: relative;
+    left: 30px;
+}

@@ -1,0 +1,124 @@
+{% extends 'store/layouts/main.html' %}
+ 
+{% load humanize %}
+{% load i18n %}
+{% block content %}
+<title>
+    {% block title %}Detail{% endblock title %}
+</title>
+ <!-- Header-->
+ <header class="py-5" style="background: url(../../../static/images/Mi-Notebook-Pro-X-15-1024x638-1024x638.jpg);">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder blink">{{products.name }}</h1>
+            <p class="lead fw-normal text-white-50 mb-0 blink">With this shop homepage template</p>
+        </div>
+    </div>
+</header>
+
+<div class="py-3 bg-secondary navigation">
+    <div class="container">
+        <a class="text-white fw-bold" href="{% url 'home' %}"> Home | </a>
+        <a class="text-white fw-bold" href="{% url 'collections' %}">Collections  | </a>
+        <a class="text-white fw-bold" href="{% url 'collectionsview' products.Category.slug %}">{{ products.Category.name }}  | </a>
+        <a class="text-white fw-bold" href="{% url 'productview' products.Category.slug products.slug %}">{{ products.name }} </a>
+    </div>
+</div>
+<br/>
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow product_data">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                {% if products.tag %}
+                                    <label class="products-viewtag"> {{ products.tag }} </label>
+                                {% endif %}
+                                <br>
+                                <img src="{{ products.product_image.url}}" class="w-100" alt="image" >
+                                
+                            </div>  
+                            <div class="col-md-8">
+                                <h2 class="mb-0">
+                                    {{ products.name }}
+                                    {% if products.trending %}
+                                        <label style="font-size: 10px;" class="float-end badge bg-danger trending_tag">Trending</label>
+                                    {% endif %}
+                                </h2>
+                                <hr> <span><label class="me-3"><m style="font-weight: 700;">Original price: </m><s>Fcfa  {{ products.formatted_original_price | intcomma }}
+                                </s></label></span>
+                               
+                                <label class="me-3" style="font-weight: 700;">Selling price : Fcfa {{ products.formatted_selling_price | intcomma }}
+                                </label><br>
+                                <label class="me-3"><m style="font-weight: 700;">Brand :</m> {{ products.name }} </label><br>
+                                <label class="me-3"><m style="font-weight: 700;">Quantity :</m> {{ products.quantity }}</label><br>
+                                <label class="me-3"><m style="font-weight: 700;">Features :</m>{{ products.small_description }} </label>
+                                <!-- <p class="mt-3">
+                                    {{ products.small_description }}
+                                </p> -->
+                                <hr>
+                                {% if products.quantity > 0 %}
+                                    <label class="badge bg-success">In stock</label>
+                                {% else %}
+                                    <label class="badge bg-danger">Out of stock</label>
+                                {% endif %}
+                            <div class="row mt-2">
+                                <div class="col-md-3">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{ products.id }}" class="prod_id">
+                                    <label for="Quantity">Quantity</label>
+                                    <div class="input-group text-center mb-3" style="width:130px;">
+                                        <button class="input-group-text decrement-btn">-</button>
+                                        <input type="text" name="quantity" class="form-control qty-input text-center" value="1">
+                                        <button class="input-group-text increment-btn">+</button>
+                                    </div>
+                                </div>
+                                    <div class="col-md-9">
+                                        <br>
+                                        {% if products.quantity > 0 %}
+                                            <button type="button" class="btn btn-primary me-3 float-start addToCartBtn">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                                        {% endif %}
+                                            <button type="button" class="btn btn-success me-3 addToWishlist float-start">Add to wishlist <i class="fa fa-heart"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>  
+                                <div class="col-md-12">
+                                    <hr>
+                                    <h3>Description</h3>
+                                    <p class="nt-3">
+                                        {{ products.description }} 
+                                    </p>  
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    span{
+      color: #ff0157;
+    }
+    @keyframes blink-animation {
+    0% { opacity: 1; color: #fff; } /* Afficher le texte en rouge */
+    50% { opacity: 0; color: rgba(255, 255, 0, 0.705); } /* Masquer le texte et changer en bleu */
+    100% { opacity: 1; color: rgba(0, 128, 0, 0.589); } /* Afficher le texte en vert */
+}
+
+.blink {
+    /* Appliquer l'animation */
+    animation: blink-animation 3s ease-in-out infinite;
+}
+
+.navigation .container a:hover{
+  letter-spacing: 3px;
+  color: rgb(0, 174, 255);
+  font-size: 1em;
+  background-color: rgba(0, 255, 255, 0.613);
+  border-radius: 20px;
+}
+</style>
+{% endblock content %}

@@ -1,0 +1,64 @@
+{% extends 'store/layouts/main.html' %}
+
+{% load static %}
+{% load i18n %}
+{% block content %}
+
+<title>
+    {% block title %}Login{% endblock title %}
+</title>
+
+ <!-- Header-->
+ <header class="py-5" style=" background: url(../../../static/images/Mi-Notebook-Pro-X-15-1024x638-1024x638.jpg);">
+    <div class="overlay"></div>
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">{% trans "Connection space" %}</h1>
+            <p class="lead fw-normal text-white-50 mb-0">{% trans "With this shop hompeage template" %}</p>
+        </div>
+    </div>
+</header>
+<br><br>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="">
+                <div class="card mt-3 shadow" style="border: 1px solid #111; border-radius: 10px;">
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <div class="text-center bg-secondary">
+                                <h4 class="text-white">{% trans "Login" %}</h4>
+                            </div>
+                            <hr>
+                            <div class="form-group">
+                                <label for="">{% trans "Username" %} &nbsp; <i class="fa fa-user"></i> : </label>
+                                <input type="text" class="form-control" name="username" required placeholder="Enter username">
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="">{% trans "Password" %} &nbsp; <i class="fa fa-lock"></i> :</label>
+                                <input type="password" class="form-control" name="password" required placeholder="Enter password"> -->
+                                <label for="password">{% trans "Password" %}&nbsp; <i class="fa fa-lock"></i>  :</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" name="password" id="password" required placeholder="Enter password">
+                                    <span class="input-group-text">
+                                        <i id="togglePassword" class="fa fa-eye" style="cursor: pointer;"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" style="position: relative; top: 10px;">
+                                <a href="{% url 'password_reset' %}" class="text-muted"><i style="color: blue;">{% trans "Forgot Password?" %}</i> </a>
+                            </div>
+                            
+                            <button type="submit" class="btn float-end shadow btn-success px-4">{% trans "Login" %}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+{% endblock content %}

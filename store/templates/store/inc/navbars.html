@@ -1,0 +1,122 @@
+<!-- {% load admin_urls %} -->
+{% load static %}
+{% load i18n %}
+
+<div class="py-3 d-flex justify-content-between align-items-center" style="background-color: rgba(0, 0, 0, 0.89);">
+  <div class="container" style="margin-right: auto; margin-left: 80px;">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img class='image' src="{% static 'logo/logo.PNG' %}" alt="yenishop" itemprop="image"height='90px' width='90px' alt="..." style="border-radius: 92%;">
+    </a>
+  </div>
+
+  <!-- <a href="{% url 'admin:index' %}">Connexion admin</a> -->
+
+
+  {% get_available_languages as LANGUAGES %}
+  {% get_language_info_list for LANGUAGES as languages %}
+  <div class="dropdown" style="margin-right: 40px;">
+    <button class="btn btn-info dropdown-toggle text-white" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+     {% translate "Select language" %} 
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      {% for language in languages %}
+        <a href="/{{ language.code }}" class="dropdown-item">{{ language.name_local }}</a>
+    
+      {% endfor %}
+      
+      
+    </ul>
+  </div>
+</div>
+
+
+<!-- ============= COMPONENT ============== -->
+<nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-secondary">
+ <div class="container navigation">
+    <form  action="{% url 'searchproduct' %}" method="POST" class="d-flex" style="position: relative; right: 70px;">
+        <!-- <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button> -->
+        {% csrf_token %}  
+        <div class="input-group mb-0 text-white" style="border-radius: 10px; height: 50px; width: 410px;">
+          <input type="search" required class="form-control" name="productsearch" id="searchproduct" placeholder="search products..." style="border: 2px solid #fff;">
+          <button type="submit" class="input-group-text bg-secondary" style="height: 50px; width: 50px;"><i class="fa fa-search" style="color: #fff;"></i></button>
+        </div>
+    </form>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"  aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="main_nav">
+	
+
+	<ul class="navbar-nav ms-auto">
+		<li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'accueil' %} active {% endif %}" aria-current="page" href="{% url 'home' %}">{% translate "Home" %} </a>
+        </li>
+
+        <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'collections' %} active {% endif %}" aria-current="page" href="{% url 'collections' %}">{% translate "Collections" %} </a>
+          </li>
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'cart' %} active {% endif %}" aria-current="page" href="{% url 'cart' %}">{% translate "Cart" %} </a>
+          </li>
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white {% if request.resolver_match.url_name == 'wishlist' %} active {% endif %}" aria-current="page" href="{% url 'wishlist' %}">{% translate "Wishlist" %} </a>
+          </li>
+
+          {% if request.user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a style="font-weight: bold;" class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             {{ request.user }} <m class="fa fa-user"></m>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li> -->
+              <li><hr class="dropdown-divider"></li>
+              <li><a style="font-weight: bold;" class="dropdown-item" href="{% url 'logout' %}">{% translate "Logout" %} </a></li>
+            </ul>
+          </li>
+
+        {% else %}
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white" href="{% url 'loginpage' %}">{% translate "Login" %} </a>
+          </li>
+          <li class="nav-item">
+            <a style="font-weight: bold;" class="nav-link text-white" href="{% url 'register' %}">{% translate "Register" %} </a>
+          </li>
+        {% endif %}
+
+
+	</ul>
+
+  </div> <!-- navbar-collapse.// -->
+ </div> <!-- container-fluid.// -->
+ <style>
+.logo{
+  position: relative;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.5em;
+  text-decoration: none;
+  right: 50px;
+}
+.logo span{
+  color: #ff0157;
+  font-size: 1.6em;
+}
+ 
+.navigation li a:hover{
+  letter-spacing: 3px;
+  color: rgb(0, 174, 255);
+  font-size: 1em;
+  background-color: rgba(0, 255, 255, 0.613);
+  border-radius: 20px;
+}
+
+.image{
+  position: relative;
+  border-radius: 100%;
+  /* left: 10px; */
+}
+ </style>
+</nav>
+<!-- ============= COMPONENT END// ============== -->

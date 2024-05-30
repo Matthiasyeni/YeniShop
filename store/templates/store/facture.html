@@ -1,0 +1,5 @@
+<form action="{% url 'generate_invoice' %}" method="POST">
+    {% csrf_token %}
+    <!-- Vos champs de formulaire -->
+    <button type="submit">Générer la facture</button>
+</form>

@@ -1,0 +1,73 @@
+{% extends 'store/layouts/main.html' %}
+ {% load static %}
+ {% load i18n %}
+{% block content %}
+
+<title>
+    {% block title %}Wishlist{% endblock title %}
+</title>
+
+ <!-- Header-->
+ <header class="py-5" style=" background: url(../../../static/images/Mi-Notebook-Pro-X-15-1024x638-1024x638.jpg);">
+    <div class="overlay"></div>
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Our different products</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+        </div>
+    </div>
+</header>
+
+<div class="py-3 bg-secondary">
+    <div class="container">
+        <a class="text-white fw-bold" href="{% url 'home' %}">Home  |</a>
+        <a class="text-white fw-bold" href="{% url 'wishlist' %}">Wishlist </a>
+       
+    </div>
+</div>
+<br/>
+
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow">
+                    <div class="card-body wishdata">
+                        {% if wishlist %}
+                        	{% for item in wishlist %}
+                        <div class="row  product_data">
+                            <div class="col-md-2 my-auto">
+                                <img src="{{ item.product.product_image.url }}" height="70px" width="70px" alt="Image here">
+                            </div>
+                            <div class="col-md-3 my-auto">
+                                <h6 style="font-weight: bold;">{{ item.product.name }}</h6>
+                            </div>
+                            <div class="col-md-2 my-auto">
+                                <h6 style="font-weight: bold;">Fcfa {{ item.product.selling_price | stringformat:'d' }}</h6>
+                            </div>
+                            <div class="col-md-3 my-auto">
+                                <input type="hidden" class="prod_id" value="{{ item.product_id }}">
+                                {% csrf_token %}
+                                <a href="{% url 'productview' item.product.Category.slug item.product.slug %}" class="btn btn-primary">	
+                                    <i class="fa fa-eye"> </i>&nbsp;View Product 
+                                </a>
+                            </div>
+                            <div class="col-md-2 my-auto">
+                                <button class="btn btn-danger delete-wishlist-item">
+                                    <i class="fa fa-trash"> </i>&nbsp;Remove
+                                </button>
+                            </div>
+                        </div>
+                        		
+                        	{% endfor %}
+                        {% else %}
+                        	<h4> Your wishlist is empty </h4>
+                       
+                        {% endif %}                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

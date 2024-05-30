@@ -1,0 +1,256 @@
+{% extends 'store/layouts/main.html' %}
+ {% load static %}
+ {% load humanize %}
+ {% load i18n %}
+{% block content %}
+{% include 'store/inc/slider.html' %}
+
+<title>
+    {% block title %}Home{% endblock title %}
+</title>
+
+<section class="mb-4 about">
+    <div class="row">
+    <div class="apropos">
+       
+        <div class="about-text">
+            <!-- <h1 class="text-center" style="background-color: #398583; border-radius: 30px;">Présentation</h1> -->
+            <h2 class="titleText"><span>A</span>bout <span>U</span>s</h2>
+            <!-- <p><span>Y</span>enishop est bien plus qu'une simple plateforme de commerce en ligne. Fondée avec la passion de fournir une expérience d'achat exceptionnelle, notre mission est de vous offrir une destination unique où vous pouvez découvrir les dernières tendances, trouver des produits uniques et vivre une expérience de shopping inoubliable.</p> -->
+            <p><span>Y</span>enishop is much more than just an online shopping platform. Founded with the passion to provide an exceptional shopping experience, our mission is to offer you a unique destination where you can discover the latest trends, find unique products, and enjoy an unforgettable shopping experience.</p>
+                
+
+              <!-- <p>Chez Yenishop, nous nous engageons à sélectionner soigneusement chaque produit pour assurer une qualité exceptionnelle. Notre vaste gamme de produits comprend tout ce dont vous avez besoin, des vêtements élégants et des accessoires tendance aux gadgets technologiques innovants, le tout à des prix compétitifs.</p> -->
+              <p>At Yenishop, we are committed to carefully selecting each product to ensure exceptional quality. Our extensive range of products includes everything you need, from stylish clothing and trendy accessories to innovative technological gadgets, all at competitive prices.</p>
+              <!-- <p> Notre vaste sélection de produits de haute qualité vous offre tout ce dont vous avez besoin, des vêtements élégants et des accessoires tendance aux gadgets technologiques innovants. Rejoignez-nous dès aujourd'hui et laissez YeniShop vous aider à exprimer votre style et à transformer vos idées en réalité.</p> -->
+               <!-- <p>Nous croyons en l'importance de la satisfaction de nos clients, c'est pourquoi nous nous efforçons continuellement d'améliorer nos services pour répondre à vos besoins. Que vous soyez à la recherche d'une pièce unique pour votre garde-robe ou d'un cadeau spécial pour un être cher, Yenishop est là pour vous accompagner à chaque étape de votre parcours d'achat.</p> -->
+               <p>We believe in the importance of customer satisfaction, which is why we continuously strive to improve our services to meet your needs. Whether you're looking for a unique piece for your wardrobe or a special gift for a loved one, Yenishop is here to guide you every step of the way.</p>
+              
+              <!-- <p>Rejoignez-nous dès aujourd'hui et découvrez pourquoi Yenishop est votre destination ultime pour un shopping en ligne sans tracas et une expérience client exceptionnelle.</p> -->
+              <p>Join us today and discover why Yenishop is your ultimate destination for hassle-free online shopping and exceptional customer experience.</p>
+            
+            </div>
+        <img class="img" src="{% static 'images/Samsung Galaxy.JPG' %}" alt="">
+    </div>
+    </div>
+</section>
+
+  <!--Section: Contact v.2-->
+<section class="mb-4">
+
+  <!--Section heading-->
+
+<h2 class="h1-responsive font-weight-bold text-center my-4 titleText" ><span>C</span>ontact <span>U</span>s</h2>
+
+  <!--Section description-->
+  <p class="text-center w-responsive mx-auto mb-5 fw-bold">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within a matter of hours to help you.</p>
+
+
+                  <!--Grid column-->
+
+        <form action="{% url 'contact' %}" method="POST">
+        <div class="container mt-4">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-md-12 mb-md-0 mb-5">
+                  <div class="card shadow " style="border: 1px solid;">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-md-6 mt-2">
+                                  <label class="fw-bold">First Name &nbsp; <i class=" fa fa-user"></i> :</label>
+                                  <input type="text" required  class="form-control" name="firstname" placeholder="Enter first name">
+                              </div>
+
+                              <div class="col-md-6 mt-2">
+                                  <label class="fw-bold">Last Name &nbsp;<i class=" fa fa-user"> </i> :</label>
+                                  <input type="text" required  class="form-control" name="name" placeholder="Enter last name">
+                              </div>
+
+                              <div class="col-md-6 mt-3">
+                                  <label class="fw-bold">Email &nbsp;<i class=" fa fa-envelope"> </i> :</label>
+                                  <input type="text" class="form-control" name="email" placeholder="Enter email">
+                              </div>
+
+                              <div class="col-md-6 mt-3">
+                                  <label class="fw-bold">Phone &nbsp;<i class=" fa fa-phone"> </i> :</label>
+                                  <input type="text" required  class="form-control" name="phone" placeholder="Enter phone">
+                              </div>
+
+                              <div class="col-md-12 mt-2">
+                                  <label class="fw-bold">Subject &nbsp;<i class=" fa fa-comment"> </i> :</label>
+                                  <textarea required class="form-control" name="subject" placeholder="Enter subject"></textarea>
+                              </div>
+
+                              <div class="col-md-6 mt-3">
+                                  <label class="fw-bold">City &nbsp;<i class=" fa fa-home"> </i> :</label>
+                                  <input type="text" required  class="form-control" name="city" placeholder="Enter city">
+                              </div>
+
+                              <div class="col-md-6 mt-3">
+                                  <label class="fw-bold">Country &nbsp;<i class=" fa fa-flag"> </i> :</label>
+                                  <input type="text" required  class="form-control" name="country" placeholder="Enter country">
+                              </div>
+
+                              <div class="mt-3">
+                                <button type="submit" class="btn btn-secondary w-100">Submit</button>
+                            </div>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+  </div>
+  <!-- {% for item in trending_products %}
+    {{ item.name }}
+  {% endfor %} -->
+
+  <div class="container my-5">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- <h2><span>P</span>roduits <span>t</span>endances</h2> -->
+            <h2><span>T</span>rending <span>P</span>roducts</h2>
+        
+            <hr/>
+            <div class="row owl-carousel owl-theme">
+                {% for item in trending_products %}
+                <div class="product_data item">              
+                        <div class="card cards">
+                            <div class="card-body">
+                                <a href="{% url 'productview' item.Category.slug item.slug %}">
+                                    <div class="category-image" >
+                                        <img src="{{item.product_image.url}}" alt="Product image" height='200' class="w-100" style="border: 1px solid grey; border-radius: 10px;" />
+                                    </div>
+                                    <h4 class='text-center bg-secondary text-white' style="font-size: 1.2rem; position: relative; bottom: 12px; border-radius: 0 0 5px 5px;">{{ item.name  }}</h4>
+                                </a>        
+                                <!-- <span class="float-start">{{ item.selling_price }}</span><br> -->
+                                <spa class="float-start">Fcfa {{ item.formatted_selling_price | intcomma }} </spa><br>
+                                
+                                <div class="row mt-2">
+                                    <div class="col-md-6">
+                                        {% csrf_token %}
+                                        <input type="hidden" value="{{ item.id }}" class="prod_id">
+                                
+                                        <div class="input-group text-center mb-3">
+                                            <button class="input-group-text decrement-btn">-</button>
+                                            <input type="text" name="quantity" class="form-control qty-input text-center" value="1">
+                                            <button class="input-group-text increment-btn">+</button>
+                                        </div>
+                                    </div>
+                                        <div class="col-md-6 px-0">
+                                            <span class="mb-2">
+                                                {% if item.quantity > 0 %}
+                                                    <button type="button" class="btn btn-primary btn-sm me-3 float-start addToCartBtn">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                                                {% else %}
+                                                    <button type="button" class="btn btn-danger btn-sm me-3 float-start disabled">Out of stock</button>
+                                                {% endif %}
+                                            </span>                                       
+                                         </div>
+                                    </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+  <style>
+    .about{
+        width: 100%;
+        padding: 78px 30px;
+    }
+    .about img{
+        height: auto;
+        width: 420px;
+    }
+    .about-text{
+        width: 550px;
+    }
+    .apropos{
+        /* width: 1130px; */
+        /* max-width: 95%; */
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .about-text h1{
+        color:#fff;
+        font-size: 50px;
+        text-transform: capitalize;
+        margin-bottom: 20px;
+    }
+    .about-text h5{
+        /* color:#398583; */
+        font-size: 25px;
+        text-transform: capitalize;
+        margin-bottom: 25px;
+        letter-spacing: 2px;
+    }
+    /* span{
+        color:#398583; 
+        text-transform: capitalize;
+        font-size: 30px;
+    } */
+    .titleText{
+   color: #111;
+   font-size: 2em;
+   font-weight: 300;  
+}
+
+.cards:hover{
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.068);
+    box-shadow: 2px 2px 12px rgba(47,47,47,0.40);
+    transition: all ease 0.1s;
+}
+
+</style>
+
+</section>
+<!--Section: Contact v.2-->
+
+{% endblock content %}
+
+{% block scripts %} 
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        dots:false,
+        nav:true,
+        autoplay:true, // Ajoutez cette ligne pour activer l'autoplay
+        autoplayTimeout:3000, // Réglez le délai entre chaque diapositive en millisecondes (ici, 3 secondes)
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:4
+            }
+        }
+    });
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/66019fc81ec1082f04daf0d6/1hpr5gad7';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+{% endblock scripts %}

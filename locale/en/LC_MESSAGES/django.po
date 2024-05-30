@@ -1,0 +1,435 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-03 15:52+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\Yenishop\settings.py:134
+msgid "French"
+msgstr ""
+
+#: .\Yenishop\settings.py:135
+msgid "English"
+msgstr ""
+
+#: .\store\models.py:38
+msgid "Slug"
+msgstr ""
+
+#: .\store\models.py:39
+msgid "Name"
+msgstr ""
+
+#: .\store\models.py:40
+msgid "Image"
+msgstr ""
+
+#: .\store\models.py:41 .\store\templates\store\products\view.html:87
+msgid "Description"
+msgstr ""
+
+#: .\store\models.py:42
+msgid "0=default, 1=Hidden"
+msgstr ""
+
+#: .\store\models.py:42
+msgid "Status"
+msgstr ""
+
+#: .\store\models.py:43
+msgid "0=default, 1=Trending"
+msgstr ""
+
+#: .\store\models.py:43 .\store\templates\store\products\view.html:44
+msgid "Trending"
+msgstr ""
+
+#: .\store\models.py:44
+msgid "Meta Title"
+msgstr ""
+
+#: .\store\models.py:45
+msgid "Meta Keywords"
+msgstr ""
+
+#: .\store\models.py:46
+msgid "Meta Description"
+msgstr ""
+
+#: .\store\models.py:47
+msgid "Created At"
+msgstr ""
+
+#: .\store\models.py:50
+msgid "Category"
+msgstr ""
+
+#: .\store\models.py:51
+msgid "Categories"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:12
+msgid "Connection space"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:13
+#: .\store\templates\store\auth\register.html:14
+#: .\store\templates\store\wishlist.html:12
+msgid "With this shop hompeage template"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:27
+#: .\store\templates\store\auth\login.html:49
+#: .\store\templates\store\inc\footers.html:89
+#: .\store\templates\store\inc\navbars.html:81
+msgid "Login"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:31
+#: .\store\templates\store\auth\register.html:32
+msgid "Username"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:35
+#: .\store\templates\store\auth\login.html:37
+#: .\store\templates\store\auth\register.html:47
+msgid "Password"
+msgstr ""
+
+#: .\store\templates\store\auth\login.html:46
+msgid "Forgot Password?"
+msgstr ""
+
+#: .\store\templates\store\auth\register.html:13
+msgid "Registration area"
+msgstr ""
+
+#: .\store\templates\store\auth\register.html:28
+msgid "Registration "
+msgstr ""
+
+#: .\store\templates\store\auth\register.html:39
+#: .\store\templates\store\checkout.html:46
+#: .\store\templates\store\index.html:66
+msgid "Email"
+msgstr ""
+
+#: .\store\templates\store\auth\register.html:59
+msgid "Confirm Password"
+msgstr ""
+
+#: .\store\templates\store\auth\register.html:72
+#: .\store\templates\store\inc\footers.html:92
+#: .\store\templates\store\inc\navbars.html:84
+msgid "Register"
+msgstr ""
+
+#: .\store\templates\store\cart.html:12
+#: .\store\templates\store\checkout.html:11
+msgid "Our various products"
+msgstr ""
+
+#: .\store\templates\store\cart.html:19
+#: .\store\templates\store\inc\footers.html:68
+#: .\store\templates\store\inc\navbars.html:53
+#: .\store\templates\store\products\view.html:18
+#: .\store\templates\store\wishlist.html:19
+msgid "Home"
+msgstr ""
+
+#: .\store\templates\store\cart.html:20
+msgid " Collections"
+msgstr ""
+
+#: .\store\templates\store\cart.html:21
+#: .\store\templates\store\checkout.html:20
+#: .\store\templates\store\inc\footers.html:74
+#: .\store\templates\store\inc\navbars.html:60
+msgid "Cart"
+msgstr ""
+
+#: .\store\templates\store\cart.html:48
+#: .\store\templates\store\products\view.html:68
+msgid "Quantity"
+msgstr ""
+
+#: .\store\templates\store\cart.html:56
+msgid "Out of Stock"
+msgstr ""
+
+#: .\store\templates\store\cart.html:61
+#: .\store\templates\store\wishlist.html:53
+msgid "Remove"
+msgstr ""
+
+#: .\store\templates\store\cart.html:68
+#: .\store\templates\store\checkout.html:21
+msgid "Checkout"
+msgstr ""
+
+#: .\store\templates\store\cart.html:70
+msgid "Your cart is empty "
+msgstr ""
+
+#: .\store\templates\store\checkout.html:19
+#: .\store\templates\store\inc\footers.html:71
+#: .\store\templates\store\inc\navbars.html:57
+#: .\store\templates\store\products\view.html:19
+msgid "Collections"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:32
+msgid "Basic Details"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:36
+#: .\store\templates\store\index.html:56
+msgid "First Name"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:41
+#: .\store\templates\store\index.html:61
+msgid "Last Name"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:51
+#: .\store\templates\store\index.html:71
+msgid "Phone"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:56
+msgid "Address"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:61
+#: .\store\templates\store\index.html:81
+msgid "City"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:66
+#: .\store\templates\store\index.html:86
+msgid "Country"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:76
+msgid "Order Summary"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:82
+msgid "Product"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:83
+msgid "Qty"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:84
+msgid "Price"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:105
+msgid "COD | Place Order"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:110
+msgid "Pay with Orange Money"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:115
+msgid "Pay with Mobile Money"
+msgstr ""
+
+#: .\store\templates\store\checkout.html:118
+msgid "Your cart is empty"
+msgstr ""
+
+#: .\store\templates\store\collections.html:11
+msgid "Collections of our articles"
+msgstr ""
+
+#: .\store\templates\store\collections.html:12
+msgid "Our wide range of collections for you..."
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:12
+msgid "Get connected with us on social networks:"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:54
+msgid ""
+" YeniShop is your ultimate destination to discover the latest trends, find "
+"unique products, and enjoy an exceptional shopping experience."
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:65
+msgid "Links"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:77
+#: .\store\templates\store\inc\navbars.html:63
+#: .\store\templates\store\wishlist.html:20
+msgid "Wishlist"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:86
+msgid "Useful links"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:95
+#: .\store\templates\store\inc\navbars.html:75
+msgid "Logout"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:98
+#: .\store\templates\store\inc\footers.html:106
+msgid "Contact"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:107
+msgid "Cameroon"
+msgstr ""
+
+#: .\store\templates\store\inc\footers.html:124
+msgid "YeniShop | Copyright © 2024 - All rigths reserved"
+msgstr ""
+
+#: .\store\templates\store\inc\navbars.html:19
+msgid "Select language"
+msgstr ""
+
+#: .\store\templates\store\index.html:14
+msgid "<span>A</span>bout <span>U</span>s</h2>"
+msgstr ""
+
+#: .\store\templates\store\index.html:16
+msgid ""
+"<span>Y</span>enishop is much more than just an online shopping platform. "
+"Founded with the passion to provide an exceptional shopping experience, our "
+"mission is to offer you a unique destination where you can discover the "
+"latest trends, find unique products, and enjoy an unforgettable shopping "
+"experience."
+msgstr ""
+
+#: .\store\templates\store\index.html:20
+msgid ""
+"At Yenishop, we are committed to carefully selecting each product to ensure "
+"exceptional quality. Our extensive range of products includes everything you "
+"need, from stylish clothing and trendy accessories to innovative "
+"technological gadgets, all at competitive prices."
+msgstr ""
+
+#: .\store\templates\store\index.html:23
+msgid ""
+"We believe in the importance of customer satisfaction, which is why we "
+"continuously strive to improve our services to meet your needs. Whether "
+"you're looking for a unique piece for your wardrobe or a special gift for a "
+"loved one, Yenishop is here to guide you every step of the way."
+msgstr ""
+
+#: .\store\templates\store\index.html:26
+msgid ""
+"Join us today and discover why Yenishop is your ultimate destination for "
+"hassle-free online shopping and exceptional customer experience."
+msgstr ""
+
+#: .\store\templates\store\index.html:39
+msgid "<span>C</span>ontact <span>U</span>s"
+msgstr ""
+
+#: .\store\templates\store\index.html:42
+msgid ""
+"Do you have any questions? Please do not hesitate to contact us directly. "
+"Our team will come back to you within a matter of hours to help you."
+msgstr ""
+
+#: .\store\templates\store\index.html:76
+msgid "Subject"
+msgstr ""
+
+#: .\store\templates\store\index.html:91
+msgid "Submit"
+msgstr ""
+
+#: .\store\templates\store\index.html:139
+#: .\store\templates\store\products\view.html:78
+msgid "Add to cart"
+msgstr ""
+
+#: .\store\templates\store\index.html:141
+#: .\store\templates\store\products\view.html:62
+msgid "Out of stock"
+msgstr ""
+
+#: .\store\templates\store\products\index.html:12
+#, python-format
+msgid ""
+"\n"
+"                 %(category_name)s category\n"
+"                "
+msgstr ""
+
+#: .\store\templates\store\products\index.html:18
+#, python-format
+msgid ""
+"\n"
+"                    Welcome to your wide range of %(category_name)s\n"
+"                "
+msgstr ""
+
+#: .\store\templates\store\products\view.html:11
+msgid "With this shop homepage template"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:47
+msgid "Original price:"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:50
+msgid "Selling price :"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:52
+msgid "Brand :"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:53
+msgid "Quantity :"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:54
+msgid "Features :"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:60
+msgid "In stock"
+msgstr ""
+
+#: .\store\templates\store\products\view.html:80
+msgid "Add to wishlist"
+msgstr ""
+
+#: .\store\templates\store\wishlist.html:11
+msgid "Our different products"
+msgstr ""
+
+#: .\store\templates\store\wishlist.html:48
+msgid "View Product"
+msgstr ""
+
+#: .\store\templates\store\wishlist.html:60
+msgid "Your wishlist is empty"
+msgstr ""

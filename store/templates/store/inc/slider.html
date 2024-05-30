@@ -1,0 +1,71 @@
+{% load static %}
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="{% static 'images/Mi-Notebook-Pro-X-15-1024x638-1024x638.jpg' %}" height='500px' class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="matt">We sell: <span class="auto-typing"></span></h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/depositphotos_118541460-stock-photo-aromatic-perfume-bottles.jpg' %}" height='500px' class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="matt" style="color: #ff0157;">We sell: <span class="auto-typing"></span></h5>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'images/514wphzZk7S._AC__g84VeRW.jpg' %}" height='500px' class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 class="matt">We sell: <span class="auto-typing"></span></h5>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<!-- <div class="text">
+  <p>We sell: <span class="auto-typing"></span> </p>
+</div> -->
+  
+<style>
+
+.matt{
+  position: relative;
+  bottom: 180px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 2.4em; 
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  /* right: 190px; */
+  /* max-width: 90%; */
+}
+span{
+  color: #ff0157;
+}
+  /* .text{
+    padding: -400px 0;
+    color: #111;
+    
+
+  }
+  .text p{
+    
+   
+  } */
+</style>
